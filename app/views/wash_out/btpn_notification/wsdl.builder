@@ -11,6 +11,7 @@ xml.tag! "wsdl:definitions",
   xml.tag! "wsdl:types" do
     xml.tag! "xsd:schema" do
       xml.tag! "xsd:import", :namespace => "http://pegasus/integration/btpnnotification", :schemaLocation => "pegasus.integration.btpnnotification.xsd"
+    end
   end
 
   xml.tag! "wsdl:message", :name => "SmsNotificationGeneralOperationRequest" do
