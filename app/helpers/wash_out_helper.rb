@@ -10,6 +10,8 @@ module WashOutHelper
       end
     when 'document'
       { }
+    when 'btpn_notification'
+      { }
     end
   end
 
