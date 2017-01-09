@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://pegasus/integration/btpnnotification"
+	targetNamespace="http://pegasus/integration/btpnnotification"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:base="http://pegasus/integration/basetypes"
+	xmlns:typegen="http://pegasus/framework/typegen"
+	jaxb:extensionBindingPrefixes="typegen">
+
+	<xsd:import namespace="http://pegasus/integration/basetypes"
+		schemaLocation="pegasus.integration.basetypes.xsd" />
+
+	<xsd:element name="SmsNotificationGeneral" type="smsNotificationGeneral" />
+	<xsd:element name="SmsNotificationGeneralResponse" type="smsNotificationGeneralResponse" />
+
+	<xsd:element name="EmailHtmlNotification" type="emailHtmlNotification" />
+	<xsd:element name="EmailHtmlNotificationResponse" type="emailHtmlNotificationResponse" />
+
+	<xsd:complexType name="smsNotificationGeneral">
+		<xsd:sequence>
+			<xsd:element name="ReqSmsNotifGeneral" nillable="true" type="requestSmsNotifGeneral" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="requestSmsNotifGeneral">
+		<xsd:sequence>
+			<xsd:element name="CommonParam" nillable="true" type="commonParam" />
+			<xsd:element name="MobileNumber" nillable="true" type="xsd:string" />
+			<xsd:element name="SmsMessage" nillable="true" type="xsd:string" />
+			<xsd:element name="SenderId" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="commonParam">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ChannelType" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="ChannelId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="TellerId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="TerimalId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="TerminalName" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="UserId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="ReferenceNo" nillable="true"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="smsNotificationGeneralResponse">
+		<xsd:sequence>
+			<xsd:element name="ResponseSmsNotifGeneral" nillable="true"
+				type="genericResponseDoc" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="genericResponseDoc">
+		<xsd:sequence>
+			<xsd:element name="ResponseCode" nillable="true" type="xsd:string" />
+			<xsd:element name="ResponseDesc" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emailHtmlNotification">
+		<xsd:sequence>
+			<xsd:element name="RequestSmtpEmailHtml" nillable="true"
+				type="requestSmtpEmailHtmlNotif" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="requestSmtpEmailHtmlNotif">
+		<xsd:sequence>
+			<xsd:element name="CommonParam" nillable="true" type="commonParam2" />
+			<xsd:element name="To" nillable="true" type="xsd:string" />
+			<xsd:element name="Cc" nillable="true" minOccurs="0"
+				type="xsd:string" />
+			<xsd:element name="Bcc" nillable="true" minOccurs="0"
+				type="xsd:string" />
+			<xsd:element name="From" nillable="true" type="xsd:string" />
+			<xsd:element name="Subject" nillable="true" type="xsd:string" />
+			<xsd:element name="Body" nillable="true" type="xsd:string" />
+			<xsd:element name="Username" nillable="true" type="xsd:string" />
+			<xsd:element name="Password" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="commonParam2">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="pan" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="processingCode"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="channelId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="channelType" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="node" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="currencyAmount"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="amount" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="currencyfee" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="fee" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="transmissionDateTime"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="requestId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="acqId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="referenceNo" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="terminalId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="terminalName" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="original" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="userId" nillable="true"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emailHtmlNotificationResponse">
+		<xsd:sequence>
+			<xsd:element name="ResponseSmtpEmailNotif" nillable="true"
+				type="genericResponseDoc" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
