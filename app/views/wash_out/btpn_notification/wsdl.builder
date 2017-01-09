@@ -8,7 +8,7 @@ xml.tag! "wsdl:definitions",
   'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
   'xmlns:btpnnotification' => 'http://pegasus/integration/btpnnotification' do
 
-  xml.tag! "wsdl:types", do
+  xml.tag! "wsdl:types" do
     xml.tag! "xsd:schema" do
       xml.tag! "xsd:import", :namespace => "http://pegasus/integration/btpnnotification", :schemaLocation => "pegasus.integration.btpnnotification.xsd"
   end
